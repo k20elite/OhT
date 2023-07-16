@@ -27,6 +27,10 @@
             color: white; /* Màu chữ trắng */
             padding: 10px;
             text-align: center;
+            position: fixed; /* Vị trí cố định */
+            top: 0; /* Header luôn nằm ở trên cùng */
+            left: 0;
+            right: 0;
         }
 
         h1 {
@@ -36,12 +40,33 @@
 
         main {
             padding: 20px;
+            margin-top: 70px; /* Khoảng cách giữa header và nội dung chính */
         }
 
         img {
             display: block;
             margin: 0 auto;
             max-width: 100%;
+        }
+        
+        /* CSS cho thẻ marquee */
+        .marquee-text {
+            color: purple; /* Màu chữ tím */
+            font-size: 20px;
+            font-weight: bold;
+            white-space: nowrap; /* Chỉ chạy ngang, không xuống dòng */
+            overflow: hidden; /* Ẩn phần vượt ra ngoài */
+            animation: marquee 10s linear infinite; /* Chạy mãi mãi */
+        }
+
+        /* Keyframes animation cho marquee */
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
         }
     </style>
 </head>
@@ -58,7 +83,7 @@
     </audio>
 
     <header>
-        <h1>Fanpage Jungkook</h1>
+        <h1 class="marquee-text">Anh Thơ ❤ Jungkook</h1>
     </header>
     <main>
         <h2>Biography</h2>
@@ -75,6 +100,3 @@
             <li>Save Me</li>
             <li>Euphoria</li>
         </ul>
-    </main>
-</body>
-</html>
